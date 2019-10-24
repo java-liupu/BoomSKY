@@ -11,7 +11,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableCircuitBreaker
 public class OrdersServiceApplication {
 
+
     public static void main(String[] args) {
+        System.out.println("测试成功");
         SpringApplication.run(OrdersServiceApplication.class, args);
     }
 
