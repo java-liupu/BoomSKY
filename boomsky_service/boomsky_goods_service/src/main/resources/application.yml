@@ -1,0 +1,12 @@
+server:
+  port: 8762
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  #调用接口时请将 localhost修改成 192.168.28.236
+spring:
+  application:
+    name: GOODSSERVICE
+
+

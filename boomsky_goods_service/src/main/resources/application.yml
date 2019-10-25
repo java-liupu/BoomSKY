@@ -1,9 +1,0 @@
-server:
-  port: 8762  #¿Í»§¶Ë¶Ë¿ÚºÅ ÐÞ¸ÄÇë½÷É÷
-
-eureka:
-  client:
-    service-url: http://localhost:8761/eureka/
-spring:
-  application:
-    name: GOODSSERVICE
