@@ -9,6 +9,7 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 public class BoomskyOrderServiceApplication {
 
     public static void main(String[] args) {
+        System.out.println("你好");
         SpringApplication.run(BoomskyOrderServiceApplication.class, args);
     }
 

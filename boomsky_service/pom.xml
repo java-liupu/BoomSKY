@@ -33,6 +33,7 @@
     </properties>
 
     <dependencies>
+
         <!-- 反向生成 -->
         <dependency>
             <groupId>org.mybatis.generator</groupId>
