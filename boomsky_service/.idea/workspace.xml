@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64471521-9ccf-429d-b88b-f2670c9897c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/api/CommonPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/api/IErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/api/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/pojoVO/OmsOrderVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/service/Impl/OmsOrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/service/OmsOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/util/CommonResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_order_service/src/test/java/utils/TestMBG.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/mbg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/api/CommonPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/api/IErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/api/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/bo/AdminUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/component/RestAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/component/RestfulAccessDeniedHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/model/UmsPermission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/service/UmsAdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/service/impl/UmsAdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/util/CommonResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/util/Const.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/util/MD5Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/util/ToKenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/util/ValidateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boomsky_user_service/src/test/java/utils/TestMBG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_admin_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_admin_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_admin_service/src/main/java/com/mr/boomsky_admin_service/BoomskyAdminServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_admin_service/src/main/java/com/mr/boomsky_admin_service/BoomskyAdminServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_admin_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_admin_service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_goods_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_goods_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_goods_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_goods_service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_order_service/mbg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_order_service/mbg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_order_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_order_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/BoomskyOrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/java/com/mr/boomsky_order_service/BoomskyOrderServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_order_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/boomsky_order_service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boomsky_service.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud_service/src/main/java/com/mr/cloud_service/controller/TestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -173,8 +132,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/config/SecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="131" column="13" lean-forward="true" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -470,6 +429,11 @@
               <item name="boomsky_service" type="b2602c69:ProjectViewProjectNode" />
               <item name="boomsky_service" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="boomsky_service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="boomsky_service" type="462c0819:PsiDirectoryNode" />
+              <item name="boomsky_user_service" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -484,7 +448,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572273209168" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572273551397" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.jscs" value="project" />
@@ -629,7 +593,7 @@
       <workItem from="1572158872559" duration="10744000" />
       <workItem from="1572171734243" duration="1057000" />
       <workItem from="1572173966442" duration="278000" />
-      <workItem from="1572253472317" duration="15962000" />
+      <workItem from="1572253472317" duration="16636000" />
     </task>
     <task id="LOCAL-00001" summary="启动项">
       <created>1572013420027</created>
@@ -645,15 +609,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572062309714</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="lp">
+      <created>1572273263213</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572273263213</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52095000" />
+    <option name="totallyTimeSpent" value="52769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29312977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1113,8 +1083,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/boomsky_user_service/src/main/java/com/mr/boomsky_user_service/config/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="131" column="13" lean-forward="true" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+        <state relative-caret-position="323">
+          <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
         </state>
       </provider>
     </entry>
