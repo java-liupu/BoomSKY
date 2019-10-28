@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/boomsky_promotion_service/pom.xml" />
         <option value="$PROJECT_DIR$/boomsky_content_service/pom.xml" />
         <option value="$PROJECT_DIR$/boomsky_admin_service/pom.xml" />
+        <option value="$PROJECT_DIR$/boomsky_user_service/pom.xml" />
       </list>
     </option>
   </component>
