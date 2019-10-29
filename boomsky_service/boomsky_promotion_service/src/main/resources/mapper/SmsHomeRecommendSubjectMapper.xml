@@ -97,4 +97,10 @@
   <select id="findHomeSubjectList" resultType="SmsHomeRecommendSubject" parameterType="SmsHomeRecommendSubject">
     select <include refid="Base_Column_List" /> from sms_home_recommend_subject
   </select>
+  <insert id="addHomeSubject" parameterType="SmsHomeRecommendSubject">
+    insert into sms_home_recommend_subject (subject_id, subject_name, recommend_status,
+      sort)
+    values (#{subjectId,jdbcType=BIGINT}, #{subjectName,jdbcType=VARCHAR}, #{recommendStatus,jdbcType=INTEGER},
+      #{sort,jdbcType=INTEGER})
+  </insert>
 </mapper>

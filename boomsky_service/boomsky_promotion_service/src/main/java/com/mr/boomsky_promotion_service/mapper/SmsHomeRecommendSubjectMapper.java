@@ -20,4 +20,5 @@ public interface SmsHomeRecommendSubjectMapper {
     int findHomeSubjectTotal(SmsHomeRecommendSubject homeRecommendSubject);
 
     List<SmsHomeRecommendSubject> findHomeSubjectList();
+    int addHomeSubject(SmsHomeRecommendSubject smsHomeRecommendSubject);
 }

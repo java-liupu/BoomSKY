@@ -5,32 +5,32 @@ public class PageUtil {
 	private Integer page=1;
 	private Integer rows=3;
 	private Integer startPos;
-	
+
 	/*private String sort;*/
 	private String order;
-	
+
 	/**
-	 * calculate(计算)   
-	 * 创建人：詹姆斯.赵斯林     
-	 * 创建时间：2019年7月12日 上午11:50:44    
-	 * 修改人：詹姆斯.赵斯林      
-	 * 修改时间：2019年7月12日 上午11:50:44    
+	 * calculate(计算)
+	 * 创建人：詹姆斯.赵斯林
+	 * 创建时间：2019年7月12日 上午11:50:44
+	 * 修改人：詹姆斯.赵斯林
+	 * 修改时间：2019年7月12日 上午11:50:44
 	 * 修改备注：
 	 */
 	public void calculate() {
 		startPos = (page-1)*rows;
 	}
-	
-	/*
-	public String getSort() {
+
+
+	/*public String getSort() {
 		return sort;
 	}
 
 
 	public void setSort(String sort) {
 		this.sort = sort;
-	}
-*/
+	}*/
+
 
 	public String getOrder() {
 		return order;
@@ -60,5 +60,5 @@ public class PageUtil {
 	public void setStartPos(Integer startPos) {
 		this.startPos = startPos;
 	}
-	
+
 }
