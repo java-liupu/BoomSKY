@@ -2,6 +2,8 @@ package com.mr.boomsky_promotion_service.mapper;
 
 import com.mr.boomsky_promotion_service.pojo.SmsHomeRecommendSubject;
 
+import java.util.List;
+
 public interface SmsHomeRecommendSubjectMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,8 @@ public interface SmsHomeRecommendSubjectMapper {
     int updateByPrimaryKeySelective(SmsHomeRecommendSubject record);
 
     int updateByPrimaryKey(SmsHomeRecommendSubject record);
+
+    int findHomeSubjectTotal(SmsHomeRecommendSubject homeRecommendSubject);
+
+    List<SmsHomeRecommendSubject> findHomeSubjectList();
 }
