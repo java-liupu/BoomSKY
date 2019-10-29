@@ -5,7 +5,9 @@ import com.mr.boomsky_promotion_service.pojo.SmsHomeRecommendSubject;
 import com.mr.boomsky_promotion_service.pojo.SmsHomeRecommendSubjectExample;
 import com.mr.boomsky_promotion_service.service.ISmsHomeRecommendSubjectSer;
 import com.mr.boomsky_promotion_service.util.CommonConstant;
-import com.mr.boomsky_promotion_service.util.DataGrid;
+import com.mr.boomsky_promotion_service.util.CommonResult;
+import com.mr.boomsky_promotion_service.util.JyyData;
+import com.mr.boomsky_promotion_service.util.JyyPage;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,14 +26,19 @@ public class HomeRecommendSubServiceImpl implements ISmsHomeRecommendSubjectSer 
     * 查询+分页
     * */
     @Override
-    public DataGrid findHomeSubjectList(SmsHomeRecommendSubject homeRecommendSubject) {
-        DataGrid dg = new DataGrid();
+    public JyyData findHomeSubjectList(SmsHomeRecommendSubject homeRecommendSubject) {
+        JyyPage jp =new JyyPage();
+        JyyData jd = new JyyData();
         int total = homeRecommendSubMapper.findHomeSubjectTotal(homeRecommendSubject);
-        dg.setTotal(total);
-        homeRecommendSubject.calculate();
-       List<SmsHomeRecommendSubject> list = homeRecommendSubMapper.findHomeSubjectList();
-       dg.setRows(list);
-       //条件查询
+        int i = (homeRecommendSubject.getPageNum() - 1) * homeRecommendSubject.getPageSize();
+        homeRecommendSubject.setTotalPage(i);
+        List<SmsHomeRecommendSubject> list = homeRecommendSubMapper.findHomeSubjectList(homeRecommendSubject);
+        jp.setPageNum(homeRecommendSubject.getPageNum());
+        jp.setTotal((long)total);
+        jp.setPageSize(homeRecommendSubject.getPageSize());
+        jp.setList(list);
+        jd.setData(jp);
+        //条件查询
         SmsHomeRecommendSubjectExample example = new SmsHomeRecommendSubjectExample();
         SmsHomeRecommendSubjectExample.Criteria criteria = example.createCriteria();
         //按名字查询
@@ -44,14 +51,37 @@ public class HomeRecommendSubServiceImpl implements ISmsHomeRecommendSubjectSer 
         }
         example.setOrderByClause("sort desc");
 
-        return dg;
+        return jd;
     }
 
     @Override
-    public Map<String, Object> addHomeSubject(SmsHomeRecommendSubject smsHomeRecommendSubject) {
-        Map<String, Object> retMap = new HashMap<>();
-        int stauts = homeRecommendSubMapper.addHomeSubject(smsHomeRecommendSubject);
-        retMap.put(CommonConstant.ERROR_CODE,stauts);
-        return retMap;
+    public int addHomeSubject(List<SmsHomeRecommendSubject> recommendSubjectList) {
+        for (SmsHomeRecommendSubject recommendProduct : recommendSubjectList) {
+            recommendProduct.setRecommendStatus(1);
+            recommendProduct.setSort(0);
+            homeRecommendSubMapper.insert(recommendProduct);
+        }
+        return recommendSubjectList.size();
+    }
+
+    @Override
+    public int updateSort(Long id, Integer sort) {
+        SmsHomeRecommendSubject srs = new SmsHomeRecommendSubject();
+            srs.setId(id);
+            srs.setSort(sort);
+        return homeRecommendSubMapper.updateByPrimaryKeySelective(srs);
+    }
+
+    @Override
+    public int delete(List<Long> ids) {
+       SmsHomeRecommendSubjectExample example = new SmsHomeRecommendSubjectExample();
+        example.createCriteria().andIdIn(ids);
+        return homeRecommendSubMapper.deleteByExample(example);
+    }
+
+    @Override
+    public int updateRecommendStatus(List<Long> ids, Integer recommendStatus) {
+
+        return 0;
     }
 }

@@ -3,13 +3,12 @@ package com.mr.boomsky_promotion_service.controller;
 import com.mr.boomsky_promotion_service.pojo.SmsHomeRecommendSubject;
 import com.mr.boomsky_promotion_service.service.ISmsHomeRecommendSubjectSer;
 import com.mr.boomsky_promotion_service.util.CommonResult;
-import com.mr.boomsky_promotion_service.util.DataGrid;
+import com.mr.boomsky_promotion_service.util.JyyData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -24,9 +23,9 @@ public class SmsHomeRecommendSubjectController {
     * */
     @ResponseBody
     @RequestMapping("/list")
-    public CommonResult<DataGrid> list(SmsHomeRecommendSubject homeRecommendSubject){
-        DataGrid dg=  smsHomeRecommendSubjectSer.findHomeSubjectList(homeRecommendSubject);
-        return CommonResult.success(dg);
+    public JyyData list(SmsHomeRecommendSubject homeRecommendSubject){
+        JyyData dg=  smsHomeRecommendSubjectSer.findHomeSubjectList(homeRecommendSubject);
+        return dg;
     }
 
     /*
@@ -35,10 +34,52 @@ public class SmsHomeRecommendSubjectController {
 
     @ResponseBody
     @RequestMapping("/create")
-    public Map<String,Object> addHomeSubject(@RequestBody SmsHomeRecommendSubject smsHomeRecommendSubject){
-        Map<String,Object> map = smsHomeRecommendSubjectSer.addHomeSubject(smsHomeRecommendSubject);
-        return map;
+    public CommonResult create(@RequestBody List<SmsHomeRecommendSubject> recommendSubjectList){
+        int count = smsHomeRecommendSubjectSer.addHomeSubject(recommendSubjectList);
+        if (count > 0){
+            return CommonResult.success(count);
+        }
+        return CommonResult.failed();
     }
 
+    /*
+    *
+    * 修改推荐排序
+    * */
+    @ResponseBody
+    @RequestMapping("/update/sort/{id}")
+    public CommonResult updateSort(@PathVariable Long id,Integer sort){
+        int count =smsHomeRecommendSubjectSer.updateSort(id,sort);
+        if (count > 0){
+            return CommonResult.success(count);
+        }
+        return CommonResult.failed();
+    }
 
+    /*
+    *
+    * 批量删除推荐
+    * */
+    @ResponseBody
+    @RequestMapping("/delete")
+    public CommonResult delete(@RequestParam("ids") List<Long> ids){
+        int count = smsHomeRecommendSubjectSer.delete(ids);
+        if (count > 0){
+            return CommonResult.success(count);
+        }
+        return CommonResult.failed();
+    }
+    /**
+     *fzl
+     *批量修改推荐状态
+     */
+    @ResponseBody
+    @RequestMapping("/update/recommendStatus")
+    public CommonResult updateRecommendStatus(@RequestParam("ids") List<Long> ids, @RequestParam Integer recommendStatus){
+        int count = smsHomeRecommendSubjectSer.updateRecommendStatus(ids,recommendStatus);
+        if (count > 0){
+            return CommonResult.success(count);
+        }
+        return CommonResult.failed();
+    }
 }

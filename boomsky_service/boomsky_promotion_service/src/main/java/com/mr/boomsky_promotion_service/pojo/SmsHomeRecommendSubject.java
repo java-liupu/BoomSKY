@@ -1,8 +1,9 @@
 package com.mr.boomsky_promotion_service.pojo;
 
+import com.mr.boomsky_promotion_service.util.JyyPage;
 import com.mr.boomsky_promotion_service.util.PageUtil;
 
-public class SmsHomeRecommendSubject extends PageUtil {
+public class SmsHomeRecommendSubject extends JyyPage {
     private Long id;
 
     private Long subjectId;
