@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: localhost  #调用接口时请更换ip：192.168.28.236
+    hostname: localhost
   client:
     register-with-eureka: false
     fetch-registry: false

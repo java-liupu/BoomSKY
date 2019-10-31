@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: USERSERVICE
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&transformedBitIsBoolean=true
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapper-locations: classpath:/mappers/*.xml
+  type-aliases-package: com.mr.boomsky_user_service.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

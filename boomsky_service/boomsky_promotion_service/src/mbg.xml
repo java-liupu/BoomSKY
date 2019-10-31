@@ -51,7 +51,7 @@
 		
 		 <table
 			tableName="sms_home_recommend_subject"
-			domainObjectName="HomeRecommendSubject"
+			domainObjectName="SmsHomeRecommendSubject"
 			enableCountByExample="false" 
 			enableUpdateByExample="false"
 		 	enableDeleteByExample="false" 

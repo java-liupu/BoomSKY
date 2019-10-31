@@ -4,18 +4,9 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/  #���ýӿ�ʱ�뽫 localhost�޸ĳ� 192.168.28.236
 spring:
   application:
     name: GOODSSERVICE
-  datasource:
-    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
-    username: root
-    password: root
-mybatis:
-  mapper-locations: classpath:/mappers/*.xml
-  type-aliases-package: com.mr.goods.pojo
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 

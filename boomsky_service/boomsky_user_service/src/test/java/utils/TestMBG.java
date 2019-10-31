@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
@@ -17,7 +17,7 @@ public class TestMBG {
 
         boolean overwrite = true;
 
-        File configFile = new File("E:\\MingRuiJiaoYu\\BoomProject\\boomsky_service\\boomsky_goods_service\\mbg.xml");
+        File configFile = new File("E:\\MingRuiJiaoYu\\BoomProject\\BoomSKY\\boomsky_service\\boomsky_user_service\\mbg.xml");
 
         ConfigurationParser cp = new ConfigurationParser(warnings);
 
