@@ -62,12 +62,13 @@ public class SmsHomeRecommendSubjectController {
     * */
     @ResponseBody
     @RequestMapping("/delete")
-    public CommonResult delete(@RequestParam("ids") List<Long> ids){
+    public CommonResult delete(String ids){
+        Integer cu = null;
         int count = smsHomeRecommendSubjectSer.delete(ids);
         if (count > 0){
-            return CommonResult.success(count);
+            cu=200;
         }
-        return CommonResult.failed();
+        return CommonResult.success(cu);
     }
     /**
      *fzl
