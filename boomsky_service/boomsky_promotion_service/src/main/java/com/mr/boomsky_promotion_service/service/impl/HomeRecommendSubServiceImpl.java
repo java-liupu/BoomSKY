@@ -73,10 +73,9 @@ public class HomeRecommendSubServiceImpl implements ISmsHomeRecommendSubjectSer 
     }
 
     @Override
-    public int delete(List<Long> ids) {
-       SmsHomeRecommendSubjectExample example = new SmsHomeRecommendSubjectExample();
-        example.createCriteria().andIdIn(ids);
-        return homeRecommendSubMapper.deleteByExample(example);
+    public int delete(String ids) {
+        String[] id = ids.split(",");
+        return homeRecommendSubMapper.deleteByExample(id);
     }
 
     @Override
