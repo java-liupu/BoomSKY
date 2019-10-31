@@ -4,7 +4,7 @@
 
 
     <select id="findProductList"  resultType="com.mr.goods.pojo.PmsProduct">
-        select * from pms_product limit #{startNum},#{pageSize}
+        select * from pms_product where delete_status=0 limit #{startNum},#{pageSize}
     </select>
 
     <select id="getTotal" resultType="java.lang.Integer">
@@ -15,6 +15,12 @@
     delete from pms_product
     where id = #{id}
   </delete>
+
+    <!-- updateStatus 逻辑删除 -->
+    <update id="updateStatus" parameterType="java.lang.Long">
+        update pms_product set delete_status =1
+        where id=#{id,jdbcType=BIGINT}
+    </update>
 
 
 </mapper>

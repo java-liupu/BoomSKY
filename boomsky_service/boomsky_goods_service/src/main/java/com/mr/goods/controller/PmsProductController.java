@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @Controller
@@ -18,15 +19,15 @@ public class PmsProductController {
     private IPmsProductService productService;
 
     /*/**
-    *@Description findProductList(查询)
+    *@Description list(查询)
     *@Param [pmsProduct]
     *@Return com.mr.goods.util.DataGrid
     *@Author Lxb
     *@Date 2019/10/28
     */
     @ResponseBody
-    @RequestMapping(value = "/findProductList",method = RequestMethod.GET)
-    public CommonResult<PageUtils<PmsProduct>> findProductList(PmsProduct pmsProduct,
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
+    public CommonResult<PageUtils<PmsProduct>> list(PmsProduct pmsProduct,
                                                                @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                                              @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
         CommonResult ret = new CommonResult();
@@ -55,4 +56,15 @@ public class PmsProductController {
         return ret;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/update/deleteStatus",method = RequestMethod.POST)
+    public CommonResult<String> deleteStatus(@RequestParam List<Long> ids){
+
+        CommonResult ret = new CommonResult();
+        Integer del =  productService.deleteStatus(ids);
+        ret.setCode(200);
+        ret.setData(del);
+        ret.setMessage("操作成功");
+        return ret;
+    }
 }

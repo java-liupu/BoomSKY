@@ -48,5 +48,15 @@ public class PmsProductServiceImpl implements IPmsProductService {
         return productMapper.deleteProductInfo(ids);
     }
 
+    //  逻辑删除商品列表信息
+    @Override
+    public Integer deleteStatus(List<Long> ids) {
+        int count =0;
+        for (int i=0;i<ids.size();i++){
+            count = productMapper.updateStatus(ids.get(i));
+        }
+        return count;
+    }
+
 
 }

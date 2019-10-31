@@ -6,7 +6,7 @@ import com.mr.goods.util.PageUtils;
 
 public interface IPmsBrandService {
 
-    CommonResult<PageUtils<PmsBrand>> findBrandList(Integer pageNum, Integer pageSize);
+    CommonResult<PageUtils<PmsBrand>> list(Integer pageNum, Integer pageSize);
 
     CommonResult addBrand(PmsBrand brandVO);
 

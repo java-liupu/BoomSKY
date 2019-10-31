@@ -19,12 +19,12 @@ public class PmsBrandController {
     private IPmsBrandService brandService;
 
     //获取全部品牌列表
-    @RequestMapping(value = "/findBrandList", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<PageUtils<PmsBrand>> findBrandList(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+    public CommonResult<PageUtils<PmsBrand>> list(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                                      @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize) {
         CommonResult cr = new CommonResult();
-        CommonResult<PageUtils<PmsBrand>> list = brandService.findBrandList(pageNum,pageSize);
+        CommonResult<PageUtils<PmsBrand>> list = brandService.list(pageNum,pageSize);
         cr.setData(list);
         return list;
     }

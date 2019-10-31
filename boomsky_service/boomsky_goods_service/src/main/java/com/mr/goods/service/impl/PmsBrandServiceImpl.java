@@ -18,7 +18,7 @@ public class PmsBrandServiceImpl implements IPmsBrandService {
 
    //获取全部品牌列表
     @Override
-    public CommonResult<PageUtils<PmsBrand>> findBrandList(Integer pageNum, Integer pageSize) {
+    public CommonResult<PageUtils<PmsBrand>> list(Integer pageNum, Integer pageSize) {
         CommonResult<PageUtils<PmsBrand>> status = new CommonResult<>();
 
         PageUtils<PmsBrand> pageBrand = new PageUtils<>();
