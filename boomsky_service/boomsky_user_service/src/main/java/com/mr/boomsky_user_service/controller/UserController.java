@@ -37,7 +37,6 @@ public class UserController {
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     public CommonResult getAdminInfo(HttpServletRequest request){
         String username = "admin";
-        System.out.println(username);
         UmsAdmin umsAdmin = adminSer.getAdminByUsername(username);
         Map<String, Object> data = new HashMap<>();
         data.put("username", umsAdmin.getUsername());

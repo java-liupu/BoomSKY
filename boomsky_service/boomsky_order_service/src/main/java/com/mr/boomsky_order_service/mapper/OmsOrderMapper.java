@@ -16,8 +16,10 @@ public interface OmsOrderMapper {
 
     int updateByPrimaryKeySelective(OmsOrder record);
 
-    int updateByPrimaryKey(OmsOrder record);
+    int updateByPrimaryKey(Long id);
 
      /*--------------- 一下测试订单相关方法  -------------------*/
     List<OmsOrder> list(OmsOrderVo omsOrderVo);
+
+    int findNumOrderAll();
 }
