@@ -4,17 +4,12 @@ import com.mr.boomsky_promotion_service.mapper.SmsHomeRecommendSubjectMapper;
 import com.mr.boomsky_promotion_service.pojo.SmsHomeRecommendSubject;
 import com.mr.boomsky_promotion_service.pojo.SmsHomeRecommendSubjectExample;
 import com.mr.boomsky_promotion_service.service.ISmsHomeRecommendSubjectSer;
-import com.mr.boomsky_promotion_service.util.CommonConstant;
-import com.mr.boomsky_promotion_service.util.CommonResult;
 import com.mr.boomsky_promotion_service.util.JyyData;
 import com.mr.boomsky_promotion_service.util.JyyPage;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class HomeRecommendSubServiceImpl implements ISmsHomeRecommendSubjectSer {
@@ -73,9 +68,12 @@ public class HomeRecommendSubServiceImpl implements ISmsHomeRecommendSubjectSer 
     }
 
     @Override
-    public int delete(String ids) {
-        String[] id = ids.split(",");
-        return homeRecommendSubMapper.deleteByExample(id);
+    public int delete(List<Long> ids) {
+        Integer count =0;
+        for (int i=0;i<ids.size();i++){
+            count = homeRecommendSubMapper.updateByExample(ids.get(i));
+        }
+        return count;
     }
 
     @Override

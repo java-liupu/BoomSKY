@@ -64,14 +64,17 @@ public class SmsHomeRecommendSubjectController {
     * 批量删除推荐
     * */
     @ResponseBody
-    @RequestMapping("/delete")
-    public CommonResult delete(String ids){
-        Integer cu = null;
-        int count = smsHomeRecommendSubjectSer.delete(ids);
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    public CommonResult delete(@RequestParam List<Long> ids){
+        CommonResult ret = new CommonResult();
+        Integer count = smsHomeRecommendSubjectSer.delete(ids);
         if (count > 0){
-            cu=200;
+            ret.setCode(200);
+            ret.setData(count);
+            ret.setMessage("操作成功");
+            return CommonResult.success(ret);
         }
-        return CommonResult.success(cu);
+        return CommonResult.failed();
     }
     /**
      *fzl

@@ -17,7 +17,7 @@ public interface ISmsHomeRecommendSubjectSer {
 
     int updateSort(Long id, Integer sort);
 
-    int delete(String ids);
+    int delete(List<Long> ids);
 
     int updateRecommendStatus(List<Long> ids, Integer recommendStatus);
 }

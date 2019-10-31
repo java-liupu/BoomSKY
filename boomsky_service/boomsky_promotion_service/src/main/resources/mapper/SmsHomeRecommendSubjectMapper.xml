@@ -22,6 +22,12 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
 
+  <!-- updateByExample 逻辑删除 -->
+  <update id="updateByExample" parameterType="java.lang.Long">
+    update sms_home_recommend_subject set recommend_status =2
+    where id=#{id,jdbcType=BIGINT}
+  </update>
+
   <insert id="insertSelective" parameterType="com.mr.boomsky_promotion_service.pojo.SmsHomeRecommendSubject" >
     insert into sms_home_recommend_subject
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -88,10 +94,11 @@
   </update>
 
   <select id="findHomeSubjectTotal" parameterType="SmsHomeRecommendSubject" resultType="int">
-    select count(*) from sms_home_recommend_subject
+    select count(*) from sms_home_recommend_subject where recommend_status !=2
   </select>
+  <!-- 查询所有 -->
   <select id="findHomeSubjectList" resultType="SmsHomeRecommendSubject" parameterType="SmsHomeRecommendSubject">
-    select * from sms_home_recommend_subject limit #{totalPage},#{pageSize}
+    select * from sms_home_recommend_subject where recommend_status !=2 limit #{totalPage},#{pageSize}
   </select>
  <!-- <insert id="insert" parameterType="SmsHomeRecommendSubject">
     insert into sms_home_recommend_subject (subject_id, subject_name, recommend_status,

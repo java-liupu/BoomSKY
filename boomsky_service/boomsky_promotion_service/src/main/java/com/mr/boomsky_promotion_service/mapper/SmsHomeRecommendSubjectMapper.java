@@ -19,4 +19,6 @@ public interface SmsHomeRecommendSubjectMapper {
     int deleteByExample(String[] id);
 
     int insert(SmsHomeRecommendSubject recommendProduct);
+
+    Integer updateByExample(Long id);
 }
