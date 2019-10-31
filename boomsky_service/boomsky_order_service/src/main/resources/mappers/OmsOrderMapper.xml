@@ -65,6 +65,35 @@
     oms_order
     WHERE
     delete_status = 0
+    <if test="orderSn!=null and orderSn!=''">
+      AND order_sn = #{orderSn}
+    </if>
+    <if test="status!=null">
+      AND `status` = #{status}
+    </if>
+    <if test="sourceType!=null">
+      AND source_type = #{sourceType}
+    </if>
+    <if test="orderType!=null">
+      AND order_type = #{orderType}
+    </if>
+    <if test="createTime!=null and createTime!=''">
+      AND create_time LIKE concat(#{createTime},"%")
+    </if>
+    <if test="receiverKeyword!=null and receiverKeyword!=''">
+      AND (
+      receiver_name LIKE concat("%",#{receiverKeyword},"%")
+      OR receiver_phone LIKE concat("%",#{receiverKeyword},"%")
+      )
+    </if>
+    LIMIT #{startPos},#{pageSize}
+  </select>
+
+  <!-- findNumOrderAll 总条数-->
+  <select id="findNumOrderAll" resultType="int">
+     SELECT COUNT(*) FROM oms_order
+     WHERE
+    delete_status = 0
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -517,51 +546,12 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.mr.boomsky_order_service.pojo.OmsOrder">
-    update oms_order
-    set member_id = #{memberId,jdbcType=BIGINT},
-      coupon_id = #{couponId,jdbcType=BIGINT},
-      order_sn = #{orderSn,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      member_username = #{memberUsername,jdbcType=VARCHAR},
-      total_amount = #{totalAmount,jdbcType=DECIMAL},
-      pay_amount = #{payAmount,jdbcType=DECIMAL},
-      freight_amount = #{freightAmount,jdbcType=DECIMAL},
-      promotion_amount = #{promotionAmount,jdbcType=DECIMAL},
-      integration_amount = #{integrationAmount,jdbcType=DECIMAL},
-      coupon_amount = #{couponAmount,jdbcType=DECIMAL},
-      discount_amount = #{discountAmount,jdbcType=DECIMAL},
-      pay_type = #{payType,jdbcType=INTEGER},
-      source_type = #{sourceType,jdbcType=INTEGER},
-      status = #{status,jdbcType=INTEGER},
-      order_type = #{orderType,jdbcType=INTEGER},
-      delivery_company = #{deliveryCompany,jdbcType=VARCHAR},
-      delivery_sn = #{deliverySn,jdbcType=VARCHAR},
-      auto_confirm_day = #{autoConfirmDay,jdbcType=INTEGER},
-      integration = #{integration,jdbcType=INTEGER},
-      growth = #{growth,jdbcType=INTEGER},
-      promotion_info = #{promotionInfo,jdbcType=VARCHAR},
-      bill_type = #{billType,jdbcType=INTEGER},
-      bill_header = #{billHeader,jdbcType=VARCHAR},
-      bill_content = #{billContent,jdbcType=VARCHAR},
-      bill_receiver_phone = #{billReceiverPhone,jdbcType=VARCHAR},
-      bill_receiver_email = #{billReceiverEmail,jdbcType=VARCHAR},
-      receiver_name = #{receiverName,jdbcType=VARCHAR},
-      receiver_phone = #{receiverPhone,jdbcType=VARCHAR},
-      receiver_post_code = #{receiverPostCode,jdbcType=VARCHAR},
-      receiver_province = #{receiverProvince,jdbcType=VARCHAR},
-      receiver_city = #{receiverCity,jdbcType=VARCHAR},
-      receiver_region = #{receiverRegion,jdbcType=VARCHAR},
-      receiver_detail_address = #{receiverDetailAddress,jdbcType=VARCHAR},
-      note = #{note,jdbcType=VARCHAR},
-      confirm_status = #{confirmStatus,jdbcType=INTEGER},
-      delete_status = #{deleteStatus,jdbcType=INTEGER},
-      use_integration = #{useIntegration,jdbcType=INTEGER},
-      payment_time = #{paymentTime,jdbcType=TIMESTAMP},
-      delivery_time = #{deliveryTime,jdbcType=TIMESTAMP},
-      receive_time = #{receiveTime,jdbcType=TIMESTAMP},
-      comment_time = #{commentTime,jdbcType=TIMESTAMP},
-      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
+
+    <!-- deleteByPrimaryKey 逻辑删除,批量删除订单 -->
+  <update id="updateByPrimaryKey" parameterType="java.lang.Long">
+          update oms_order
+          set delete_status = 1
+          where id =#{id,jdbcType=BIGINT}
   </update>
+
 </mapper>

@@ -1,12 +1,11 @@
-package com.mr.boomsky_order_service.pojo;
+package com.mr.boomsky_user_service.pojo;
 
-import com.mr.boomsky_order_service.util.PageUtil;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class OmsOrder extends PageUtil {
+public class OmsOrder {
     private Long id;
 
     private Long memberId;
