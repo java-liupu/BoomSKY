@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mr.goods.mapper.PmsProductMapper">
+
+
+    <select id="findProductList"  resultType="com.mr.goods.pojo.PmsProduct">
+        select * from pms_product limit #{startNum},#{pageSize}
+    </select>
+
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(*) from pms_product
+    </select>
+
+    <delete id="deleteProductInfo" parameterType="java.lang.Integer">
+    delete from pms_product
+    where id = #{id}
+  </delete>
+
+
+</mapper>

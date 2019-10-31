@@ -1,6 +1,7 @@
-package com.mr.boomsky_order_service.pojoVO;
+package com.mr.boomsky_user_service.pojoVO;
 
-import com.mr.boomsky_order_service.util.PageUtil;
+
+import com.mr.boomsky_user_service.util.PageUtil;
 
 /**
  * 订单查询参数
