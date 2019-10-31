@@ -12,4 +12,6 @@ public interface IPmsProductService {
     CommonResult<PageUtils<PmsProduct>> findProductList(Integer pageNum,Integer pageSize);
 
     Integer deleteProductInfo(Integer ids);
+
+    Integer deleteStatus(List<Long> ids);
 }

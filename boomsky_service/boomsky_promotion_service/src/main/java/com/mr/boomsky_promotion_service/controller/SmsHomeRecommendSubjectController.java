@@ -23,7 +23,10 @@ public class SmsHomeRecommendSubjectController {
     * */
     @ResponseBody
     @RequestMapping("/list")
-    public JyyData list(SmsHomeRecommendSubject homeRecommendSubject){
+    public JyyData list(@RequestParam Integer pageNum,@RequestParam Integer pageSize){
+        SmsHomeRecommendSubject homeRecommendSubject = new SmsHomeRecommendSubject();
+        homeRecommendSubject.setPageNum(pageNum);
+        homeRecommendSubject.setPageSize(pageSize);
         JyyData dg=  smsHomeRecommendSubjectSer.findHomeSubjectList(homeRecommendSubject);
         return dg;
     }

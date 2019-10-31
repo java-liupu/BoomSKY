@@ -12,4 +12,6 @@ public interface PmsProductMapper {
     List<PmsProduct> findProductList(PageUtils pa);
 
     Integer deleteProductInfo(Integer ids);
+
+    int updateStatus(Long id);
 }
