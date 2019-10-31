@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mr.goods.mapper.PmsBrandMapper">
+
+	<!--查询总条数-->
+	<select id="findTotalNum" resultType="Integer">
+		select count(*) from pms_brand
+	</select>
+
+	<!--获取品牌列表-->
+	<select id="findBrandList" resultType="com.mr.goods.pojo.PmsBrand">
+		select * from pms_brand
+		limit #{startNum},#{pageSize}
+	</select>
+
+	<!--添加-->
+	<insert id="addBrand" parameterType="com.mr.goods.pojo.PmsBrand">
+		insert into  pms_brandvalues(#{id},#{name},#{first_letter},#{sort},#{factory_status},#{show_status},#{product_count},#{product_comment_count},#{logo},#{big_pic},#{brand_story})
+	</insert>
+
+<!--	&lt;!&ndash;删除&ndash;&gt;-->
+<!--	<delete id="deleteBrand" parameterType="com.mr.goods.pojo.PmsBrand">-->
+<!--		delete * from pms_brand where id=#{id}-->
+<!--	</delete>-->
+
+<!--	&lt;!&ndash;根据id查询&ndash;&gt;-->
+<!--	<select id="toUpdate" resultType="com.mr.entity.UserManageVO" parameterType="com.mr.entity.UserManageVO">-->
+<!--		select * from a_user-->
+<!--		<where>-->
+<!--			userId = #{userId}-->
+<!--		</where>-->
+<!--	</select>-->
+
+</mapper>
